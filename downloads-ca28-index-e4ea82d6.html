@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>加拿大28 · 站点可信介绍 | 落地页</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background-color: #f6f8fc;
+            color: #1e2a41;
+            line-height: 1.65;
+        }
+        a {
+            color: #1167b1;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.15s ease;
+        }
+        a:hover { color: #0a4a7a; text-decoration: underline; }
+
+        /* ===== 深色头图 hero ===== */
+        .hero {
+            background: linear-gradient(135deg, #0b1a2e 0%, #1a3346 100%);
+            color: #e6edf5;
+            padding: 5rem 1.5rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            right: -20%;
+            top: -30%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(34, 120, 184, 0.12) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .hero-inner {
+            max-width: 720px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            margin-bottom: 0.9rem;
+            color: #ffffff;
+        }
+        .hero h1 small {
+            display: block;
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: #b0ccdf;
+            margin-top: 0.4rem;
+            letter-spacing: 0.04em;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 580px;
+            margin: 1.2rem auto 2rem;
+            color: #d3e2ee;
+        }
+        .hero-sitelink {
+            display: inline-block;
+            background: #2278b8;
+            color: #fff;
+            font-weight: 600;
+            padding: 0.9rem 2.2rem;
+            border-radius: 40px;
+            font-size: 1.05rem;
+            box-shadow: 0 4px 12px rgba(34, 120, 184, 0.3);
+            transition: background 0.2s, box-shadow 0.2s;
+        }
+        .hero-sitelink:hover {
+            background: #1b5f93;
+            box-shadow: 0 6px 16px rgba(34, 120, 184, 0.4);
+            text-decoration: none;
+            color: #fff;
+        }
+        @media (max-width: 640px) {
+            .hero { padding: 3rem 1.2rem 2.8rem; }
+            .hero h1 { font-size: 2rem; }
+            .hero p { font-size: 1rem; }
+        }
+
+        /* ===== 浅色正文区 ===== */
+        .content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2.8rem 1.5rem 3.5rem;
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #0a1f33;
+            margin-bottom: 1.2rem;
+            border-left: 4px solid #2278b8;
+            padding-left: 1rem;
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 1.8rem 0 2.5rem;
+        }
+        @media (max-width: 680px) {
+            .two-col { grid-template-columns: 1fr; gap: 1.5rem; }
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 1.8rem 1.8rem 2rem;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0,0,0,0.03);
+            border: 1px solid #e9eef5;
+            transition: box-shadow 0.2s;
+        }
+        .card:hover { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06); }
+        .card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #0f2a44;
+            margin-bottom: 0.8rem;
+        }
+        .card p {
+            color: #2b3f5a;
+            font-size: 0.98rem;
+        }
+        .card ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 0.6rem;
+        }
+        .card li {
+            position: relative;
+            padding-left: 1.3rem;
+            margin-bottom: 0.45rem;
+            font-size: 0.96rem;
+            color: #2b3f5a;
+        }
+        .card li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #2278b8;
+            font-weight: bold;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem 2rem;
+            margin: 1.8rem 0 2.2rem;
+        }
+        @media (max-width: 680px) {
+            .faq-grid { grid-template-columns: 1fr; }
+        }
+        .faq-item {
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 1.3rem 1.5rem 1.5rem;
+            border: 1px solid #e5ecf4;
+        }
+        .faq-item dt {
+            font-weight: 600;
+            color: #0f2a44;
+            font-size: 1.02rem;
+            margin-bottom: 0.4rem;
+        }
+        .faq-item dd {
+            color: #2b405c;
+            font-size: 0.95rem;
+            margin-left: 0;
+        }
+
+        .trust-note {
+            background: #eef3fa;
+            border-radius: 20px;
+            padding: 2rem 2rem 2rem;
+            margin: 2.5rem 0 2rem;
+            border-left: 5px solid #2278b8;
+        }
+        .trust-note p {
+            font-size: 1rem;
+            color: #1a2c42;
+            margin-bottom: 0.5rem;
+        }
+        .trust-note strong {
+            color: #0a1f33;
+        }
+
+        .bottom-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.8rem 2.2rem;
+            padding: 1.8rem 0 0.5rem;
+            border-top: 1px solid #dce3ed;
+            margin-top: 2.5rem;
+            font-size: 0.95rem;
+            color: #4a5d76;
+        }
+        .bottom-links a {
+            color: #2278b8;
+        }
+
+        .footer-note {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #6a7f99;
+            margin-top: 2.5rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid #e2e9f2;
+        }
+
+        /* 强调色 */
+        .accent-badge {
+            display: inline-block;
+            background: #2278b8;
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 0.15rem 0.7rem;
+            border-radius: 20px;
+            letter-spacing: 0.02em;
+            vertical-align: middle;
+            margin-left: 0.4rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO 深色头图 -->
+    <section class="hero">
+        <div class="hero-inner">
+            <h1>
+                加拿大28
+                <small>站点介绍 · 可信说明</small>
+            </h1>
+            <p>
+                <a href="https://downloads-ca28.com" class="hero-sitelink">加拿大28</a>
+            </p>
+            <p style="margin-top: 1.2rem;">
+                聚焦数据服务与信息索引，为关注加拿大28的访问者提供清晰、直观的导航入口。
+            </p>
+        </div>
+    </section>
+
+    <!-- 正文浅色区 -->
+    <div class="content">
+
+        <!-- 优势区 / 特点 -->
+        <h2 class="section-title">站点定位与优势</h2>
+        <div class="two-col">
+            <div class="card">
+                <h3>专注加拿大28信息整合</h3>
+                <p>本页面作为 <a href="https://downloads-ca28.com">加拿大28</a> 的官方介绍落地页，围绕加拿大28相关资源、工具与数据索引进行整理，帮助用户快速了解背景与可用内容。</p>
+                <ul>
+                    <li>结构化信息展示，降低浏览成本</li>
+                    <li>持续维护，保持链接有效性</li>
+                    <li>中立视角，不嵌入主观断言</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>可信度与透明度</h3>
+                <p>所有对外链接均指向明确来源。站点不收集访客隐私，不嵌入第三方跟踪脚本。我们仅提供指向 <a href="https://downloads-ca28.com">加拿大28</a> 的直达路径。</p>
+                <ul>
+                    <li>无强制弹窗或诱导点击广告</li>
+                    <li>域名归属可查，运营信息公开</li>
+                    <li>定期审查页面内容准确性</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 说明区：站点介绍与可信说明 -->
+        <h2 class="section-title" style="margin-top: 1.6rem;">站点介绍与可信说明</h2>
+        <div style="background: #ffffff; border-radius: 20px; padding: 1.8rem 2rem; border: 1px solid #e9eef5; margin-bottom: 2rem;">
+            <p style="margin-bottom: 1rem;">
+                <strong>downloads-ca28.com</strong> 是一个轻量级的信息集合页，核心作用是为访问者提供关于加拿大28的可靠访问入口。本页面对应资源由维护团队筛选并保持更新，不包含任何形式的实时博彩或资金交易功能。
+            </p>
+            <p style="margin-bottom: 1rem;">
+                我们明确声明：本网站不承诺任何收益、中奖概率或投资回报。所有提及的“加拿大28”均指代数字文化或数据索引语境下的概念，请访问者基于个人判断合理使用。
+            </p>
+            <p>
+                如需直接访问资源页面，可点击上方 <a href="https://downloads-ca28.com">加拿大28</a> 链接，或通过页面底部导航跳转。建议使用现代浏览器获得最佳显示效果。
+            </p>
+        </div>
+
+        <!-- FAQ 摘要 -->
+        <h2 class="section-title" style="margin-top: 1.6rem;">常见问题摘要</h2>
+        <dl class="faq-grid">
+            <div class="faq-item">
+                <dt>这个页面提供什么？</dt>
+                <dd>一个引导至 <a href="https://downloads-ca28.com">加拿大28</a> 的清晰入口，以及关于本站背景、数据索引范围的简要说明。</dd>
+            </div>
+            <div class="faq-item">
+                <dt>信息是否可靠？</dt>
+                <dd>页面内容由运营方基于公开信息整理，并标注引用来源。但我们建议用户自行核实关键信息。</dd>
+            </div>
+            <div class="faq-item">
+                <dt>是否收集个人数据？</dt>
+                <dd>本落地页不设置任何表单，不部署分析脚本，不读取本地存储。仅服务器日志可能记录基础访问数据（IP、时间、UA等），用于基础运维。</dd>
+            </div>
+            <div class="faq-item">
+                <dt>如何反馈问题？</dt>
+                <dd>目前通过页面底部链接可联系维护方。我们会在合理时间内处理链接失效或内容勘误。</dd>
+            </div>
+        </dl>
+
+        <!-- 可信提示块 -->
+        <div class="trust-note">
+            <p><strong>可信说明：</strong> 本页面由独立维护团队运营，与任何第三方博彩平台无隶属关系。所有指向 <a href="https://downloads-ca28.com">加拿大28</a> 的链接均经过人工审核，确保目标资源合法合规。</p>
+            <p style="margin-top: 0.6rem;">—— 请理性认知，注意个人信息安全。</p>
+        </div>
+
+        <!-- 底部链接 -->
+        <div class="bottom-links">
+            <span><a href="https://downloads-ca28.com">加拿大28</a></span>
+            <span><a href="#">关于本站</a></span>
+            <span><a href="#">使用须知</a></span>
+            <span><a href="#">联系反馈</a></span>
+        </div>
+
+        <div class="footer-note">
+            &copy; 2025 加拿大28 信息页 &middot; 仅供介绍参考
+        </div>
+
+    </div>
+
+</body>
+</html>
